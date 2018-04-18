@@ -109,7 +109,7 @@ module Telegram
       end
 
       def conn
-        @conn ||= Faraday.new(url: 'https://api.telegram.org', ssl: Bot.configuration.ssl_opts, request: { proxy: Bot.configuration.proxy_opts }) do |faraday|
+        @conn ||= Faraday.new(url: 'https://api.telegram.org') do |faraday|
           faraday.request :multipart
           faraday.request :url_encoded
           faraday.adapter :net_http
