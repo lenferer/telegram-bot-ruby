@@ -191,11 +191,9 @@ You can use socks5 or another proxy, for this, create the `telegram.rb` file in 
 
 # https proxy example
 Telegram::Bot.configure do |config|
-  config.ssl_opts = {verify: false}
+  config.ssl_opts = {verify: true}
   config.proxy_opts = {
     uri:  'https://your_proxy_ip:port',
-    user: 'your login',
-    password: 'your pass',
     socks: false
   }
 end
